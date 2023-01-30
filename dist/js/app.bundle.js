@@ -152,14 +152,16 @@ var ChartBase = function (props) {
     var loadData = function () {
         Api_1.Api.getWeather()
             .then(function (weather) {
-            setWeathers(function (weathers) { return __spreadArray(__spreadArray([], weathers, true), [weather], false); });
+            if (weather.code == 0) {
+                setWeathers(function (weathers) { return __spreadArray(__spreadArray([], weathers, true), [weather], false); });
+            }
         });
     };
     var onTime = function () {
         loadData();
     };
     React.useEffect(function () {
-        timerID.current = window.setInterval(onTime, 3000);
+        timerID.current = window.setInterval(onTime, 10000);
         return function () { return window.clearInterval(timerID.current); };
     }, []);
     var getData = function () {

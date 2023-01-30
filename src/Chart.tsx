@@ -17,7 +17,9 @@ const ChartBase = (props: IProps) => {
   const loadData = () => {
     Api.getWeather()
     .then(weather => {
-      setWeathers(weathers => [...weathers, weather]); 
+      if(weather.code == 0) {
+        setWeathers(weathers => [...weathers, weather]); 
+      }
     });
   }
 
@@ -26,7 +28,7 @@ const ChartBase = (props: IProps) => {
   }
 
   React.useEffect(() => {
-    timerID.current = window.setInterval(onTime, 3000);
+    timerID.current = window.setInterval(onTime, 10000);
     return () => window.clearInterval(timerID.current);
   }, []);
 
