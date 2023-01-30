@@ -1,0 +1,43 @@
+{
+  "name": "ecowitt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-prod": "webpack --config webpack.config-production.js",
+    "build-dev": "webpack --config webpack.config-development.js",
+    "build-debug": "webpack --config webpack.config-debug.js",
+    "start": "npm run build-debug && node server.js"
+  },
+  "dependencies": {
+    "@independent-software/mapbox-ext": "^1.0.6",
+    "@independent-software/typeui": "^1.1.39",
+    "axios": "^0.27.2",
+    "date-fns": "^2.29.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.3.2",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@types/recharts": "^1.8.24",
+    "@types/styled-components": "^4.4.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "express": "^4.18.1",
+    "html-webpack-plugin": "^5.5.0",
+    "source-map-loader": "^4.0.0",
+    "svg-spritemap-webpack-plugin": "^4.5.0",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-middleware": "^5.3.3",
+    "webpack-hot-middleware": "^2.25.2"
+  }
+}

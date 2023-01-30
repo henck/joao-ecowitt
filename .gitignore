@@ -1,0 +1,8 @@
+node_modules
+.tscache
+dist
+bak
+build
+out
+tiles
+json
